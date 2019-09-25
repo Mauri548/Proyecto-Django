@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog - {% block titulo %}{% endblock titulo %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login_css.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/lista_css.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<div width="100%">
+		<div style="margin-left:30%;">
+			{% if user.is_authenticated %}
+				<b>HOLA {{user.username}}</b>
+				<a href="{% url 'logout' %}">LOGOUT</a>
+			{%else%}
+				<a href="{% url 'login' %}">LOGIN</a>
+			{%endif%}
+		</div>
+
+		{% block contenido %}
+
+		{% endblock contenido %}
+
+		<div style="padding-top: 100px; margin-left: 40%"></div>
+		FIN
+	</div>
+</body>
+</html>

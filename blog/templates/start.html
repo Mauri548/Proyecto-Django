@@ -1,0 +1,26 @@
+{% extends 'base_template.html' %}
+
+	{% block titulo %} Start {% endblock titulo %}
+	{% block contenido %}
+
+	<div>
+		<h1>Hola</h1>
+		<!-- Ir a la segunda pagina -->
+		<nav class="nav-prueba">
+			<ul>
+				{% for p in object_list %}
+					<li>
+						<a href="{% url 'productos:listprod' p.pk %}">{{p.nombre}}</a>
+					</li>
+				{% endfor %}
+
+				
+			</ul>
+		</nav>
+		<a href="{% url 'productos:listarfiltro'%}">FILTROS</a>
+		<a href="{% url 'productos:listar' %}">Productos</a>
+		<a href="">Rubros</a>
+		
+	</div>
+
+	{% endblock contenido %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/login_css.css">
+    <title>Iniciar sesion</title>
+    
+</head>
+<body>
+    <div class="container-log">
+        {% if form.errors %}
+            <div style="background-color: red; font-size: 3es;">{{from.errors}}</div>
+        {% endif%}
+        <form action="" method="POST">{% csrf_token %} <!-- para que no hagan invación del post -->
+            <h2>Inicio de Sesion</h2>
+
+            
+            
+            <!-- Cuadros de usuario, password y email -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter username" name="username">
+            </div>
+            <!--<div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>-->
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="cuadro" id="pwd" placeholder="Enter password" name="password">
+            </div>
+            <div class="form-group form-check">
+                <label for="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="remeber">Remember me
+                </label>
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}"/>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base_template.html' %}
+
+
+{% block titulo%}Filtro{% endblock titulo%}
+
+{% block contenido %}
+
+	<div>
+    <header>
+        <h1> Filtro </h1>
+        <div style="margin-left: 93%;">
+            <a href="{% url 'productos:crear'%}" class="btn btn-primary boton">Agregar</a>
+        </div>
+    </header>
+	<form>
+		<select name="filtro">
+		{% for r in rubros %}
+			<option value="{{r.pk}}">{{r.nombre}}</option>
+		{% endfor %}
+		</select>
+        <input type="number" name="desde" placeholder="DESDE">
+        <input type="number" name="hasta" placeholder="HASTA">
+		<button type="submit">
+			filtrar
+		</button>
+		
+	</form>
+	<div class="container">
+		<div class="row">
+			{% for p in object_list %}
+			<div class="col-md-4">
+				<div class="card" style="width: 18rem;">
+				{% if p.imagen %}
+				  <img src="{{p.imagen.url}}" class="card-img-top" alt="...">
+				{% else %}
+					<img src="..." class="card-img-top" alt="...">
+				{% endif %}
+				  <div class="card-body">
+				    <h5 class="card-title">{{p.nombre}}</h5>
+				    <p class="card-text">PRECIO: $ {{p.precio}}</p>
+				    <a href="{% url 'productos:detalle' p.pk %}" class="btn btn-primary">+ detalle</a>
+				  </div>
+				</div>
+			</div>
+			{% endfor %}
+			</div>
+			<a href="{% url 'home' %}">VOLVER</a>
+		
+		
+		</div>
+	</div>
+
+{% endblock contenido %}

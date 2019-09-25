@@ -1,0 +1,21 @@
+.boton {
+    display: inline-block;
+    text-align: left;
+}
+
+.card-body ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.card-body ul li {
+	float: left;
+	overflow: hidden;
+	margin-left: 30px;
+}
+
+.card-cuerpo {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 20px;
+}

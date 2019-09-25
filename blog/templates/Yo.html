@@ -1,0 +1,14 @@
+{% extends 'base_template.html' %}
+
+	{% block titulo %} Yo {% endblock titulo %}
+	{% block contenido %}
+
+	<style>
+		.fondo {background-color: #5B9EE6;}
+	</style>
+	<body class="fondo">
+		<h1> Hola soy el nuevo Start</h1>
+		<a href="{% url 'home' %}">Ir a Primera</a>
+	</body>
+
+	{% endblock contenido %}

@@ -1,0 +1,21 @@
+{% extends 'base_template.html' %}
+
+	{% block titulo %} Start {% endblock titulo %}
+	{% block contenido %}
+
+	<div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="container">
+                    <form method="POST" enctype="multipart/form-data">{% csrf_token %} 
+                        {{form.as_p}}
+                        <button type="submit"> CREAR </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+	</div>
+
+	{% endblock contenido %}
