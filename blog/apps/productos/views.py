@@ -28,9 +28,9 @@ class CrearProductos(CreateView):
 #     #else:
 #         #r = Rubro.object.get(pk = pk)
 #         #p = r.ProductosXRubros.all()
-#     # context['object_list'] = p
+#     # context['list_rubro'] = p
 #     # return render(request,'productos/listar.html',context)
-#     context['object_list'] = Producto.objects.filter(rubro = pk) #object_list es una variable, esta puede tener cualquier nombre
+#     context['list_rubro'] = Producto.objects.filter(rubro = pk) #object_list es una variable, esta puede tener cualquier nombre
 #     return render(request,'productos/listar.html',context)
 
 

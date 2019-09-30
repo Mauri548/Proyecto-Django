@@ -74,8 +74,9 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background: #F5BE46;
+    background: #16A70F;
 }
+
 
 .nav-prueba ul{
     list-style: none;
@@ -96,3 +97,49 @@
     font-size: 20px;
     padding-top: 5px;
 }
+
+/* #logout{
+    color: black;
+    outline: none;
+} */
+
+.inicio-prod a{
+    color: black;
+    outline: none;
+}
+
+.menu{
+    background-color: #A8BEC6;
+}
+
+/* --------------------------------- LISTA DESPLEGABLE DE RUBROS ---------------------------------------------- */
+ 
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    outline: none;
+  }
+  
+.dropdown-content a:hover {
+    background-color: rgba(89,211,83,0.5);
+    outline: none;
+    text-decoration: none;
+}
+  
+  .dropdown:hover .dropdown-content {display: block;}
