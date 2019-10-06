@@ -29,4 +29,5 @@ urlpatterns = [
     path('logout', auth_views.LogoutView.as_view(),name="logout"),
     path('productos', include('apps.productos.url')),
     path('rubros', include('apps.rubros.urlRubros')), #
+    path('favoritos', include('apps.favoritos.url')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

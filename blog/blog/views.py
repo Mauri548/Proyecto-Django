@@ -11,12 +11,13 @@ class ListarRubros(ListView):
     model = Rubros
     template_name = 'start.html'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(ListarRubros, self).get_context_data(**kwargs)
-    #     context_object_name = 'rub'
-    #     list_rubro = Rubros.objects.all()
-    #     context['rub'] = list_rubro
-    #     return context
+    def get_context_data(self, **kwargs):
+        # context = super(ListarRubros, self).get_context_data(**kwargs)
+        context = {}
+        context_object_name = 'rub'
+        list_rubro = Rubros.objects.all()
+        context['rub'] = list_rubro
+        return context
 
 # def LisRubro(request):
 #     context = {}

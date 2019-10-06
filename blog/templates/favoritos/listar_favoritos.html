@@ -5,25 +5,8 @@
 
 	<div>
         <header>
-            <h1> Productos </h1>
-            <div style="margin-left: 93%;">
-                <a href="{% url 'productos:crear'%}" class="btn btn-primary boton">Agregar</a>
-            </div>
-        </header>
-		<!-- Ir a la segunda pagina -->
-        
-        <!-- <form action="">
-            <select name="filtro">
-                <option value="0">Todos</option>
-                {% for p in rubros %}
-                    <option value="{{p.pk}}">{{p.nombre}}</option>
-                {% endfor %}
-            </select>
-            <input type="number" name="desde" placeholder="DESDE">
-            <input type="number" name="hasta" placeholder="HASTA">
-            <button type="submit"> filtrar </button>
-        </form> -->
-        
+            <h1> Favoritos </h1>
+        </header>        
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
@@ -32,26 +15,25 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    {% if p.imagen %}
-                                        <img src="{{p.imagen.url}}" class="card-img" alt="...">
+                                    {% if p.producto.imagen %}
+                                        <img src="{{p.producto.imagen.url}}" class="card-img" alt="...">
                                     {% else %}
                                         <img src="..." class="card-img" alt="...">
                                     {% endif %}
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body" id="div-card{{p.pk}}">
-                                        <h5 class="card-title">{{p.nombre}}</h5>
+                                        <h5 class="card-title">{{p.producto.nombre}}</h5>
                                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga saepe fugiat laudantium quasi vitae totam, impedit rem eos quas ad, obcaecati voluptate quaerat. Architecto quo voluptatem ipsam cumque autem at.</p>
                                         <ul>
                                             <li>
-                                                <p class="card-text"><strong class="text-muted">${{p.precio}}</strong></p>
+                                                <p class="card-text"><strong class="text-muted">${{p.producto.precio}}</strong></p>
                                             </li>
                                             <li>
-                                                <p class="card-text"><strong class="text-muted">Stock: {{p.stock}}</strong></p>
+                                                <p class="card-text"><strong class="text-muted">Stock: {{p.producto.stock}}</strong></p>
                                             </li>
                                         </ul>
-                                        <a href="{% url 'productos:detalle' p.pk %}" class="btn btn-primary">Ver Mas</a>
-                                        <button onclick="favoritos(this.id);" id="{{p.pk}}">fav</button>
+                                        <a href="{% url 'productos:detalle' p.producto.pk %}" class="btn btn-primary">Ver Mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +49,7 @@
 
     {% endblock contenido %}
     
-    {% block js %}
+    <!-- {% block js %}
         <script type="text/javascript">
             function favoritos(id){
                 $.ajax({
@@ -82,6 +64,4 @@
                 });
             }
         </script>
-	{% endblock js %}
-
-        
+	{% endblock js %} -->

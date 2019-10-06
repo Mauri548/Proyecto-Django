@@ -11,6 +11,14 @@ class ListarProductos(ListView):
     model = Producto
     template_name = 'productos/listar.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(ListarProductos, self).get_context_data(**kwargs)
+        context_object_name = 'rub'
+        list_rubro = Rubros.objects.all()
+        context['rub'] = list_rubro
+        return context
+    
+
 class DetalleProducto(DetailView):
     model = Producto
     template_name = 'productos/detalleProducto.html'
@@ -64,3 +72,10 @@ class ListarProductosPorRubro(ListView):
         else:
             x = Producto.objects.filter(rubro=self.kwargs['pk'])
         return x
+    
+    def get_context_data(self, **kwargs):
+        context = super(ListarProductosPorRubro, self).get_context_data(**kwargs)
+        context_object_name = 'rub'
+        list_rubro = Rubros.objects.all()
+        context['rub'] = list_rubro
+        return context
